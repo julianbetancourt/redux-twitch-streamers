@@ -1,0 +1,86 @@
+.control
+  display: flex
+  flex-direction: column
+  h1
+    text-align: center
+
+.input
+  border: 1px solid #afafaf
+  display: flex
+  margin: .3em 0
+  height: 3em
+  input
+    //background: none
+    flex-grow: 4
+    border: none
+    border-right: 1px solid #afafaf
+    padding: 0 0 0 .6em
+  i
+    flex-grow: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    background: #d4d4d4
+    height: 100%
+    color: #757575
+.nav
+  display: flex
+  flex-direction: column
+  margin: 1em 0
+  &__item
+    text-align: center
+    padding: 1em 0
+    width: 96%
+    margin: 0 auto
+    color: white
+    cursor: pointer
+    &:nth-child(1)
+      background: #2283F6
+    &:nth-child(2)
+      background: #02CDA0
+      box-shadow: inset 0px 9px 12px 0px rgba(0,0,0,0.45)
+    &:nth-child(3)
+      background: #FB3C4E
+
+  &__active
+    width: 100%
+
+@media (min-width: 425px)
+  .input
+    input
+      flex-grow: 7
+    i
+      flex-grow: 1
+
+@media (min-width: 768px)
+  .control
+    flex-direction: column
+    width: 25%
+    position: fixed
+    background: white
+    height: 100%
+  .input
+    input
+      flex-grow: 0
+      width: 80%
+    i
+      flex-grow: 0
+      width: 20%
+  .input--filter
+    input
+      width: 79%
+    i
+      width: 21%
+
+@media (min-width: 1045px)
+  .control
+    flex-direction: column
+    width: 20%
+    position: fixed
+    background: white
+    height: 100%
+  .input
+    input
+      flex-grow: 1
+    i
+      flex-grow: 10
