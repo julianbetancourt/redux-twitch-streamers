@@ -8,7 +8,7 @@ import { addChannel } from './actions/channelActions';
 
 const store = configStore();
 
-const channelNames = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", 'comster404', 'ESL_SC2', 'summit1g', "hastad", 'brunofin'];
+const channelNames = ["freecodecamp", 'streamerhouse', "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", 'comster404', 'ESL_SC2', 'summit1g', "hastad", 'brunofin'];
 
 channelNames.forEach((el) => store.dispatch(addChannel(el)))
 

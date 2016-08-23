@@ -1,10 +1,12 @@
-//import * as types from '../actions/actionTypes';
+import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 const controls = (state = initialState.controls, action) => {
   switch (action.type) {
-    case 'TEST':
-      return 'TEST';
+    case types.SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        filter: action.filter
+      });
     default:
       return state;
   }

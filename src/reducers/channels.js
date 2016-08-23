@@ -12,7 +12,8 @@ const channels = (state = initialState.channels, action) => {
         ...state,
         {
           name: channelExists ? action.channelInfo[0].display_name : action.name,
-          logo: channelExists ? action.channelInfo[0].logo : 'http://placehold.it/60x60?text=?',
+          logo: channelExists && action.channelInfo[0].logo ? action.channelInfo[0].logo : 'http://placehold.it/335x335?text=?',
+          link: channelExists ? action.channelInfo[0].url : '#',
           state: isOnline ? 'online' : 'offline',
           game: !channelExists ? "This channel doesn't exist" :isOnline ? action.channelInfo[1].stream.game : 'offline',
           id: action.id
