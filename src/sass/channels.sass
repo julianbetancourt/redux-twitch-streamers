@@ -1,3 +1,6 @@
+.channels
+  position: relative
+  z-index: 1
 .channel
   //background: pink
   display: flex
@@ -7,17 +10,16 @@
   text-align: center
   border: 1px solid #cbcbcb
   position: relative
-  z-index: -1
+  z-index: 1
+  .close
+    position: absolute
+    right: 5px
+    top: 0
+    font-size: 1.2em
   &__photo
     width: 50%
     margin: 0 auto
-  &::before
-    content: "x"
-    position: absolute
-    right: .2em
-    top: 0
-    color: #828282
-    font-size: 2em
+
   h2
     margin-top: 0
   &--online

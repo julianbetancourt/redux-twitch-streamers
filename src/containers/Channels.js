@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Channel from '../components/Channel';
+import { removeChannel } from '../actions/channelActions';
 
 const getVisibleChannels = (channels, filter) => {
   switch (filter) {
@@ -18,13 +19,13 @@ const getVisibleChannels = (channels, filter) => {
 
 class Channels extends Component {
   render() {
-    const { channels, searchInputStr } = this.props;
+    const { channels, searchInputStr, removeChannel } = this.props;
     return (
       <div className="channels">
         {
           channels
             .filter(channel => channel.name.toLowerCase().includes(searchInputStr))
-            .map(channel => {
+            .map((channel, i) => {
             return (
               <Channel
                 logo={channel.logo}
@@ -32,7 +33,9 @@ class Channels extends Component {
                 link={channel.link}
                 game={channel.game}
                 online={channel.state === "online"}
-                key={channel.name}/>
+                key={channel.name}
+                removeChannel={removeChannel}
+                i={i}/>
             )
           })
         }
@@ -48,4 +51,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(Channels);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeChannel: id => dispatch(removeChannel(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Channels);

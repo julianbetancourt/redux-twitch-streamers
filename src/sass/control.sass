@@ -1,6 +1,8 @@
 .control
   display: flex
   flex-direction: column
+  z-index: 9999
+  position: relative
   h1
     text-align: center
 
@@ -44,6 +46,10 @@
 
   &__active
     width: 100%
+
+.notification-container
+  z-index: 1
+
 
 @media (min-width: 425px)
   .input
