@@ -9,7 +9,7 @@ Users can:
 3. Remove a channel
 
 ## Online
-You can see the project live in [https://twitch-viewers.herokuapp.com](https://twitch-viewers.herokuapp.com/)
+You can see the project live in [http://twitch-viewers.herokuapp.com/](http://twitch-viewers.herokuapp.com/)
 
 ## Local Installation
 1. ```cd``` to the project's folder
