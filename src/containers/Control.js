@@ -10,7 +10,7 @@ class Control extends Component {
     const { changeFilterStr, changeAddStr, addChannel } = this.props;
     return (
       <div className="control">
-        <h1>Twitch Viewer</h1>
+        <h1>Twitch Streamers</h1>
         <div className="input-group">
           <Input type="filter" changeFilterStr={changeFilterStr}/>
           <Input type="add" changeAddStr={changeAddStr} addChannel={addChannel}/>
