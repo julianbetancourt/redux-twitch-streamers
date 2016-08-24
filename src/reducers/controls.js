@@ -10,6 +10,10 @@ const controls = (state = initialState.controls, action) => {
     case types.CHANGE_FILTER_STR:
       return Object.assign({}, state, {
         searchChannel: action.str
+      });
+    case types.CHANGE_ADD_STR:
+      return Object.assign({}, state, {
+        newChannel: action.str
       })
     default:
       return state;

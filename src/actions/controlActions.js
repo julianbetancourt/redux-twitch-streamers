@@ -13,3 +13,10 @@ export const changeFilterStr = (str) => {
     str
   }
 }
+
+export const changeAddStr = (str) => {
+  return {
+    type: types.CHANGE_ADD_STR,
+    str
+  }
+}
