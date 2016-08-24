@@ -6,3 +6,10 @@ export const setVisibilityFilter = (filter) => {
     filter
   }
 }
+
+export const changeFilterStr = (str) => {
+  return {
+    type: types.CHANGE_FILTER_STR,
+    str
+  }
+}

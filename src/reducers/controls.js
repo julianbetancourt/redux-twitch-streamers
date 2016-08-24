@@ -7,6 +7,10 @@ const controls = (state = initialState.controls, action) => {
       return Object.assign({}, state, {
         filter: action.filter
       });
+    case types.CHANGE_FILTER_STR:
+      return Object.assign({}, state, {
+        searchChannel: action.str
+      })
     default:
       return state;
   }

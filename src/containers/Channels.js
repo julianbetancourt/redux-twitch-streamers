@@ -18,11 +18,13 @@ const getVisibleChannels = (channels, filter) => {
 
 class Channels extends Component {
   render() {
-    const { channels } = this.props;
+    const { channels, searchInputStr } = this.props;
     return (
       <div className="channels">
         {
-          channels.map(channel => {
+          channels
+            .filter(channel => channel.name.toLowerCase().includes(searchInputStr))
+            .map(channel => {
             return (
               <Channel
                 logo={channel.logo}
@@ -41,7 +43,8 @@ class Channels extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    channels: getVisibleChannels(state.channels, state.controls.filter)
+    channels: getVisibleChannels(state.channels, state.controls.filter),
+    searchInputStr: state.controls.searchChannel
   }
 }
 
